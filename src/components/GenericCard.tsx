@@ -1,25 +1,13 @@
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
+import React from "react";
 
-export function CardWithForm() {
+export function GenericCard({children}: {children: React.ReactNode}) {
   return (
-    <Card className="w-[350px]">
-      <CardHeader>
-        <CardTitle>Create project</CardTitle>
-        <CardDescription>Deploy your new project in one-click.</CardDescription>
-      </CardHeader>
-      <CardContent></CardContent>
-      <CardFooter className="flex justify-between">
-        <Button variant="outline">Cancel</Button>
-        <Button>Deploy</Button>
-      </CardFooter>
+    <Card className="w-[120px] h-[180px] min-h-max min-w-max bg-[#1F2029]">
+      <CardContent style={{padding: '2rem' , height: '100%',width: '100%'}}>{children}</CardContent>
     </Card>
   );
 }
