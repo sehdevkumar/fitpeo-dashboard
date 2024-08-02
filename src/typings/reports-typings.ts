@@ -1,5 +1,8 @@
+import React from "react";
+
 export type ReportCardType = {
-  iconSrc: string;
+  color?:string,
+  iconSrc: React.ReactNode;
   label: string;
   value: string;
   percent: string;

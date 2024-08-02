@@ -2,36 +2,41 @@ import { ReportCardType, ReportProfitCardType } from "@/typings/reports-typings"
 import { useEffect, useState } from "react";
 import ReportsCards from "./Reports/ReportsCards";
 import ProfitCard from "./Reports/ProfitCard";
+import { CircleDollarSign, PackageOpen, ShoppingBag } from "lucide-react";
 
 
 
 
 const ListReports: ReportCardType[] = [
   {
-    iconSrc: "",
+    color: "#4165FF",
+    iconSrc: <PackageOpen className="size-8 fill-[#4165FF]" />,
     label: "Total Orders",
     value: "75",
     percent: "3%",
     isDown: false,
   },
   {
-    iconSrc: "",
+    color: "#00CB8C",
+    iconSrc: <ShoppingBag className="size-8 fill-[#00CB8C]" />,
     label: "Total Delivered",
     value: "70",
     percent: "3%",
     isDown: true,
   },
   {
-    iconSrc: "",
+    color: "#F45C5C",
+    iconSrc: <ShoppingBag className="size-8 fill-[#F45C5C]" />,
     label: "Cancelled",
-    value: '05',
+    value: "05",
     percent: "3%",
     isDown: false,
   },
   {
-    iconSrc: "",
+    color: "#EEB4E4",
+    iconSrc: <CircleDollarSign className="size-8 fill-[#EEB4E4]" />,
     label: "Total Revenue",
-    value: '$12k',
+    value: "$12k",
     percent: "3%",
     isDown: true,
   },
@@ -64,9 +69,9 @@ function Reports() {
 
 
   return (
-    <div className="flex flex-row gap-x-[20px] w-full justify-center p-[20px]">
-      <div className="flex w-full gap-x-[20px] flex-2">
-        {getReports.map((item,i) => {
+    <div className="grid  gap-[20px] h-full w-full overflow-hidden justify-between grid-cols-[repeat(autofit,minmax(300px,1fr))] p-[20px] xl:grid-cols-2">
+      <div className="flex w-full gap-[20px] lg:flex-nowrap md:flex-wrap  sm:flex-wrap">
+        {getReports.map((item, i) => {
           return (
             <>
               <ReportsCards key={i} {...item} />
@@ -74,8 +79,8 @@ function Reports() {
           );
         })}
       </div>
-      <div className="flex justify-between w-full flex-1">
-              {/* <ProfitCard {...getProfitCardData} /> */}
+      <div className="flex justify-between w-full">
+        <ProfitCard {...getProfitCardData} />
       </div>
     </div>
   );
