@@ -1,37 +1,36 @@
-import { Settings, Share } from 'lucide-react';
-import {
-  Drawer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
+import { Bell, Mail, Settings, Share } from 'lucide-react';
 import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 function Header() {
   return (
-    <header className="sticky top-0 z-10 flex h-[57px] items-center gap-1 border-b bg-background px-4">
-      <h1 className="text-xl font-semibold">Playground</h1>
-      <Drawer>
-        <DrawerTrigger asChild>
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <Settings className="size-4" />
-            <span className="sr-only">Settings</span>
-          </Button>
-        </DrawerTrigger>
-        <DrawerContent className="max-h-[80vh]">
-          <DrawerHeader>
-            <DrawerTitle>Configuration</DrawerTitle>
-            <DrawerDescription>
-              Configure the settings for the model and messages.
-            </DrawerDescription>
-          </DrawerHeader>
-        </DrawerContent>
-      </Drawer>
-      <Button variant="outline" size="sm" className="ml-auto gap-1.5 text-sm">
-        <Share className="size-3.5" />
-        Share
-      </Button>
+    <header className="sticky top-0 z-10 justify-between flex h-[80px] items-center gap-1 border-b bg-background px-4">
+      <Input className="max-w-[250px] bg-[#1F2029]" placeholder="Search" />
+      <div className="flex gap-x-2">
+        <Button
+          size="sm"
+          className="ml-auto w-[50px] bg-[#1F2029] h-[50px] gap-1.5 text-sm rounded-full"
+        >
+          <Settings color="#d7d7d7" />
+        </Button>
+        <Button
+          size="sm"
+          className="ml-auto w-[50px] bg-[#1F2029] h-[50px] gap-1.5 text-sm  rounded-full"
+        >
+          <Mail color="#d7d7d7" />
+        </Button>
+        <Button
+          size="sm"
+          className="ml-auto w-[50px] bg-[#1F2029] h-[50px] gap-1.5 text-sm  rounded-full"
+        >
+          <Bell color="#d7d7d7" />
+        </Button>
+
+        <Avatar className="ml-auto w-[50px] bg-[#1F2029] h-[50px] gap-1.5 text-sm  rounded-full">
+          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+      </div>
     </header>
   );
 }

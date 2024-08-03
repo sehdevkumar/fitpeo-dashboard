@@ -74,7 +74,7 @@ function OrdersTable() {
           {getOrders.map((order,index) => {
             return (
               <>
-                <TableRow key={index} className="bg-accent">
+                <TableRow key={index}>
                   <TableCell className="flex gap-[0.5rem]">
                     <div className="font-medium">
                       <Avatar>

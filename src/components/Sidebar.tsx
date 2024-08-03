@@ -12,6 +12,12 @@ import {
   Settings2,
   LifeBuoy,
   SquareUser,
+  HomeIcon,
+  SquareKanban,
+  ClipboardList,
+  PanelLeftOpen,
+  ShoppingBag,
+  LogOut,
 } from "lucide-react";
 import { Button } from "./ui/button";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -30,15 +36,13 @@ function Sidebar() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="rounded-lg bg-muted"
+                className="rounded-lg bg-muted bg-[#7695FD]"
                 aria-label="Playground"
               >
-                <SquareTerminal className="size-5" />
+                <HomeIcon className="size-5 " />
               </Button>
             </TooltipTrigger>
-            <TooltipContent side="right" sideOffset={5}>
-              Playground
-            </TooltipContent>
+            <TooltipContent side="right" sideOffset={5}></TooltipContent>
           </Tooltip>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -48,12 +52,10 @@ function Sidebar() {
                 className="rounded-lg"
                 aria-label="Models"
               >
-                <Bot className="size-5" />
+                <SquareKanban />
               </Button>
             </TooltipTrigger>
-            <TooltipContent side="right" sideOffset={5}>
-              Models
-            </TooltipContent>
+            <TooltipContent side="right" sideOffset={5}></TooltipContent>
           </Tooltip>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -63,12 +65,10 @@ function Sidebar() {
                 className="rounded-lg"
                 aria-label="API"
               >
-                <Code2 className="size-5" />
+                <ClipboardList />
               </Button>
             </TooltipTrigger>
-            <TooltipContent side="right" sideOffset={5}>
-              API
-            </TooltipContent>
+            <TooltipContent side="right" sideOffset={5}></TooltipContent>
           </Tooltip>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -78,12 +78,10 @@ function Sidebar() {
                 className="rounded-lg"
                 aria-label="Documentation"
               >
-                <Book className="size-5" />
+                <PanelLeftOpen />
               </Button>
             </TooltipTrigger>
-            <TooltipContent side="right" sideOffset={5}>
-              Documentation
-            </TooltipContent>
+            <TooltipContent side="right" sideOffset={5}></TooltipContent>
           </Tooltip>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -93,12 +91,10 @@ function Sidebar() {
                 className="rounded-lg"
                 aria-label="Settings"
               >
-                <Settings2 className="size-5" />
+                <ShoppingBag />
               </Button>
             </TooltipTrigger>
-            <TooltipContent side="right" sideOffset={5}>
-              Settings
-            </TooltipContent>
+            <TooltipContent side="right" sideOffset={5}></TooltipContent>
           </Tooltip>
         </nav>
         <nav className="mt-auto grid gap-1 p-2">
@@ -110,28 +106,13 @@ function Sidebar() {
                 className="mt-auto rounded-lg"
                 aria-label="Help"
               >
-                <LifeBuoy className="size-5" />
+                <LogOut />
               </Button>
             </TooltipTrigger>
             <TooltipContent side="right" sideOffset={5}>
-              Help
             </TooltipContent>
           </Tooltip>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="mt-auto rounded-lg"
-                aria-label="Account"
-              >
-                <SquareUser className="size-5" />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent side="right" sideOffset={5}>
-              Account
-            </TooltipContent>
-          </Tooltip>
+       
         </nav>
       </aside>
     </TooltipProvider>
