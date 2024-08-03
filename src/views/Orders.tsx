@@ -1,3 +1,4 @@
+import FeedbackList from "./Orders/Feedbacks";
 import OrdersTable from "./Orders/OrdersTable";
 
 export default function Orders() {
@@ -9,6 +10,7 @@ export default function Orders() {
         </div>
         <div className="flex min-w-max justify-center md:justify-start">
           <div className="w-full max-w-full flex flex-1">
+            <FeedbackList/>
           </div>
         </div>
       </div>

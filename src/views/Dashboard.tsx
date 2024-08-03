@@ -14,11 +14,12 @@ export function Dashboard() {
       <div className="flex flex-col">
         <Header />
         <LayoutWrapper>
-          <h2>Dashboard</h2>
+          <h1 className="font-bold text-[25px]">Dashboard</h1>
+
           <div className="w-full h-full flex flex-col gap-y-5">
-             <Reports/>
-             <Activities/>
-             <Orders/>
+            <Reports />
+            <Activities />
+            <Orders />
           </div>
         </LayoutWrapper>
       </div>

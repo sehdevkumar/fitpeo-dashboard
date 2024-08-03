@@ -36,6 +36,7 @@ const chartConfig = {
 export function ActivityBarChart() {
   return (
     <GenericCard>
+      <h1 className="font-bold text-[25px]">Activity</h1>
       <ChartContainer config={chartConfig}>
         <BarChart accessibilityLayer data={chartData}>
           <CartesianGrid stroke="#4B4C53" vertical={false} />

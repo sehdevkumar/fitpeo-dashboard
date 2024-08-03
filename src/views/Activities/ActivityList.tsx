@@ -36,7 +36,6 @@ function ActivityList() {
 
   return (
     <GenericCard>
-      <div className="flex flex-col w-full justify-between h-full">
         {getData?.map((d) => {
           return (
             <div key={d.value} className="flex justify-between">
@@ -51,7 +50,6 @@ function ActivityList() {
             </div>
           );
         })}
-      </div>
     </GenericCard>
   );
 }
