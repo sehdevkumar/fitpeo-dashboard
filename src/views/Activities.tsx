@@ -1,4 +1,5 @@
 import { ActivityBarChart } from "./Activities/ActivityBarChart";
+import ActivityList from "./Activities/ActivityList";
 
 function Activities() {
   return (
@@ -8,7 +9,9 @@ function Activities() {
           <ActivityBarChart />
         </div>
         <div className="flex min-w-max justify-center md:justify-start">
-          <div className="w-full max-w-full flex flex-1"></div>
+          <div className="w-full max-w-full flex flex-1">
+            <ActivityList />
+          </div>
         </div>
       </div>
     </>

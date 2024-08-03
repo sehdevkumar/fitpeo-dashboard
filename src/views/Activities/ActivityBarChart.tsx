@@ -9,23 +9,27 @@ import {
 } from "@/components/ui/chart";
 import { GenericCard } from "@/components/GenericCard";
 const chartData = [
-  { week: 5,value: },
-  { week: 9 },
-  { week: 11 },
-  { week: 13 },
-  { week: 15 },
-  { week: 17 },
-  { week: 19},
-  { week: 21},
-  { week: 23 },
-  { week: 25 },
-  { week: 27 },
+  { week: 5, value: Math.random()*100 },
+  { week: 9, value: Math.random()*100 },
+  { week: 11, value: Math.random()*100 },
+  { week: 13, value: Math.random()*100 },
+  { week: 15, value: Math.random()*100 },
+  { week: 17, value: Math.random()*100 },
+  { week: 19, value: Math.random()*100 },
+  { week: 21, value: Math.random()*100 },
+  { week: 23, value: Math.random()*100 },
+  { week: 25, value: Math.random()*100 },
+  { week: 27, value: Math.random()*100 },
 ];
 
 const chartConfig = {
   week: {
-    label: "Desktop",
-    color: "hsl(var(--chart-1))",
+    label: "Week",
+    color: "red",
+  },
+  value: {
+    label: "Value",
+    color: "red",
   }
 } satisfies ChartConfig;
 
@@ -34,17 +38,17 @@ export function ActivityBarChart() {
     <GenericCard>
       <ChartContainer config={chartConfig}>
         <BarChart accessibilityLayer data={chartData}>
-          <CartesianGrid vertical={false} />
+          <CartesianGrid stroke="#4B4C53" vertical={false} />
           <XAxis
-            dataKey="month"
+            dataKey="week"
             tickLine={false}
             tickMargin={10}
             axisLine={false}
-            tickFormatter={(value) => value.slice(0, 3)}
+            tickFormatter={(value) => value}
           />
 
           <YAxis
-            dataKey="desktop"
+            dataKey="value"
             tickLine={false}
             tickMargin={10}
             tickCount={4}
@@ -57,8 +61,8 @@ export function ActivityBarChart() {
             content={<ChartTooltipContent indicator="dashed" />}
           />
           <Bar
-            dataKey="desktop"
-            fill="var(--color-desktop)"
+            dataKey="value"
+            fill="#7094FC"
             radius={20}
             width={10}
             barSize={20}
